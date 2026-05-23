@@ -11,6 +11,7 @@ import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 
 export default function App() {
   return (
+    <div className="w-full overflow-x-hidden">
 
     <Routes>
 
@@ -35,6 +36,6 @@ export default function App() {
       />
 
     </Routes>
-
+</div>
   );
 }

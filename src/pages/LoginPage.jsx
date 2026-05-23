@@ -1,93 +1,197 @@
 import tomatoBg from "../assets/tomato-bg.jpg";
 import { Mail, Eye } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function LoginPage() {
+
   return (
+
     <div
-      className="min-h-screen bg-cover bg-center flex items-center justify-center"
+      className="
+      min-h-screen
+      bg-cover
+      bg-center
+      flex
+      items-center
+      justify-center
+      relative
+      px-6
+      "
       style={{
         backgroundImage: `url(${tomatoBg})`,
       }}
     >
 
       {/* OVERLAY */}
-      <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px]"></div>
+      <div className="
+      absolute
+      inset-0
+      bg-black/30
+      backdrop-blur-[2px]
+      "></div>
 
-      {/* LOGIN BOX */}
-      <div className="relative z-10 flex flex-col items-center">
+      {/* CONTENT */}
+      <div className="
+      relative
+      z-10
+      w-full
+      flex
+      flex-col
+      justify-center
+      ">
 
         {/* TITLE */}
-      <h1 className="text-5xl font-bold text-[#355E3B] tracking-tight mb-16">
-       Tomato LeafGuard
-      </h1>
+        <h1 className="
+        text-5xl
+        md:text-6xl
+        font-bold
+        text-white
+        mb-16
+        leading-tight
+        ">
+          Tomato <br />
+          LeafGuard
+        </h1>
 
         {/* EMAIL */}
-        <div className="w-[400px] mb-8">
+        <div className="mb-8">
 
-          <label className="text-white text-3xl">
+          <label className="
+          text-white
+          text-2xl
+          block
+          mb-3
+          ">
             Masukan E-mail
           </label>
 
-          <div className="mt-3 bg-white/20 backdrop-blur-md rounded-full px-6 py-2 flex items-center justify-between">
+          <div className="
+          bg-white/20
+          backdrop-blur-md
+          rounded-2xl
+          px-5
+          py-4
+          flex
+          items-center
+          ">
 
             <input
               type="email"
               placeholder="Email"
-              className="bg-transparent outline-none text-white placeholder:text-white/70 text-lg w-full"
+              className="
+              bg-transparent
+              outline-none
+              text-white
+              placeholder:text-white/70
+              text-lg
+              w-full
+              "
             />
 
-            <Mail size={35} className="text-white" />
+            <Mail className="text-white" />
 
           </div>
 
         </div>
 
         {/* PASSWORD */}
-        <div className="w-[400px] mb-6">
+        <div className="mb-8">
 
-          <label className="text-white text-3xl">
+          <label className="
+          text-white
+          text-2xl
+          block
+          mb-3
+          ">
             Masukan Password
           </label>
 
-          <div className="mt-3 bg-white/20 backdrop-blur-md rounded-full px-6 py-2 flex items-center justify-between">
+          <div className="
+          bg-white/20
+          backdrop-blur-md
+          rounded-2xl
+          px-5
+          py-4
+          flex
+          items-center
+          ">
 
             <input
               type="password"
               placeholder="Password"
-              className="bg-transparent outline-none text-white placeholder:text-white/70 text-lg w-full"
+              className="
+              bg-transparent
+              outline-none
+              text-white
+              placeholder:text-white/70
+              text-lg
+              w-full
+              "
             />
 
-            <Eye size={35} className="text-white" />
+            <Eye className="text-white" />
+
           </div>
 
         </div>
-{/* LINKS */}
-<div className="flex flex-col items-center mb-10">
 
-  <p className="text-white text-2xl">
-    Belum punya akun?
+        {/* LINKS */}
+        <div className="
+        text-center
+        mb-10
+        ">
 
-    <a
-      href="/register"
-      className="text-2xl font-bold text-green-900 ml-2 hover:underline"
-    >
-      Daftar
-    </a>
+          <p className="
+          text-white
+          text-lg
+          ">
 
-  </p>
+            Belum punya akun?
 
-  <a
-    href="/forgot-password"
-    className="text-white text-2xl underline mt-4 cursor-pointer hover:text-green-200"
-  >
-    Lupa Password?
-  </a>
+            <Link
+              to="/register"
+              className="
+              ml-2
+              font-bold
+              text-green-200
+              "
+            >
+              Daftar
+            </Link>
 
-</div>
+          </p>
+
+          <Link
+            to="/forgot-password"
+            className="
+            block
+            mt-4
+            text-white
+            underline
+            "
+          >
+            Lupa Password?
+          </Link>
+
+        </div>
+
         {/* BUTTON */}
-       <button className="w-[260px] py-3 rounded-full text-xl font-semibold bg-green-600 hover:bg-green-700 hover:scale-105 transition text-white shadow-xl shadow-green-900/30">
-       Masuk
-      </button>
+        <button className="
+        w-full
+        py-4
+        rounded-2xl
+        bg-green-600
+        hover:bg-green-700
+        text-white
+        text-xl
+        font-semibold
+        transition
+        shadow-xl
+        ">
+
+          Masuk
+
+        </button>
 
       </div>
 
