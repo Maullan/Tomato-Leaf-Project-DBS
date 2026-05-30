@@ -58,39 +58,71 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F7F8F4] flex items-center justify-center px-6 py-10">
-      <div className="w-full max-w-6xl bg-white rounded-[40px] overflow-hidden shadow-xl grid grid-cols-1 lg:grid-cols-2">
+   <div className="
+min-h-screen
+bg-[#F7F8F4]
+flex
+items-center
+justify-center
+px-3
+md:px-6
+py-4
+md:py-10
+">
+      <div className="
+w-full
+max-w-6xl
+bg-white
+rounded-[24px]
+md:rounded-[40px]
+overflow-hidden
+shadow-xl
+grid
+grid-cols-1
+lg:grid-cols-2
+">
 
         {/* LEFT SIDE */}
-        <div className="bg-gradient-to-b from-green-600 to-green-700 p-14 flex flex-col justify-between relative overflow-hidden">
+        <div className="
+bg-gradient-to-b
+from-green-600
+to-green-700
+p-6
+md:p-14
+flex
+flex-col
+justify-between
+relative
+overflow-hidden
+">
           <div>
             <div className="flex items-center gap-4 mb-10">
               <div className="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center text-4xl">
                 🌱
               </div>
               <div>
-                <h1 className="text-white text-4xl font-bold">TomatoCare</h1>
-                <p className="text-green-100 text-lg mt-1">Smart AI Plant Diagnosis</p>
+                <h1 className="text-white text-2xl md:text-4xl font-bold">TomatoCare</h1>
+                <p className="text-green-100 text-sm md:text-lg mt-1">Smart AI Plant Diagnosis</p>
               </div>
             </div>
 
-            <h2 className="text-white text-6xl font-bold leading-tight max-w-xl">
+            <h2 className="text-white text-3xl md:text-6xl font-bold leading-tight max-w-xl">
               Rawat tanaman tomat lebih mudah bersama AI.
             </h2>
 
-            <p className="text-green-100 text-2xl mt-8 leading-relaxed max-w-2xl">
+           <p className=" text-green-100 text-base md:text-2xl mt-4 md:mt-8 leading-relaxed max-w-2xl">
               Analisis penyakit daun, pantau riwayat tanaman, dan dapatkan rekomendasi perawatan terbaik secara real-time.
             </p>
           </div>
 
-          <div className="flex gap-6 mt-16 flex-wrap">
-            <div className="bg-white/15 backdrop-blur-md px-8 py-5 rounded-3xl">
-              <h3 className="text-white text-4xl font-bold">98%</h3>
-              <p className="text-green-100 mt-2 text-lg">Akurasi Deteksi</p>
+        <div className="flex justify-center gap-2 mt-6 md:mt-16">
+            <div className="bg-white/15 backdrop-blur-md px-3 py-2 md:px-8 md:py-5 rounded-2xl min-w-[110px] text-center">
+             <h3 className="text-white text-xl md:text-4xl font-bold">98%</h3>
+              <p className="text-green-100 text-[11px] md:text-lg">Akurasi Deteksi</p>
             </div>
-            <div className="bg-white/15 backdrop-blur-md px-8 py-5 rounded-3xl">
-              <h3 className="text-white text-4xl font-bold">24/7</h3>
-              <p className="text-green-100 mt-2 text-lg">Monitoring Tanaman</p>
+            <div className="bg-white/15 backdrop-blur-md px-3 py-2 md:px-8 md:py-5 rounded-2xl min-w-[110px] text-center">
+              <h3 className="text-white text-xl md:text-4xl font-bold">24/7</h3>
+              <p className="text-green-100 text-[11px] md:text-lg">Monitoring Tanaman</p>
             </div>
           </div>
 
@@ -99,11 +131,11 @@ export default function RegisterPage() {
         </div>
 
         {/* RIGHT SIDE */}
-        <div className="p-12 lg:p-16 flex flex-col justify-center">
+       <div className="p-6 md:p-12 lg:p-16 flex flex-col justify-center">
           {success ? (
             <div className="flex flex-col items-center text-center gap-6">
               <CheckCircle2 size={80} className="text-green-500" />
-              <h2 className="text-4xl font-bold text-gray-800">Berhasil Daftar!</h2>
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-800">Berhasil Daftar!</h2>
               <p className="text-gray-500 text-xl">
                 Akun kamu berhasil dibuat. Mengarahkan ke halaman login...
               </p>
@@ -137,7 +169,7 @@ export default function RegisterPage() {
                     value={form.full_name}
                     onChange={handleChange}
                     disabled={loading}
-                    className="w-full bg-[#F5F7F3] rounded-2xl px-6 py-5 text-lg outline-none border-2 border-transparent focus:border-green-500 transition"
+                    className="w-full bg-[#F5F7F3] rounded-2xl px-4 md:px-6 py-4 md:py-5 text-base md:text-lg outline-none border-2 border-transparent focus:border-green-500 transition"
                     required
                   />
                 </div>
@@ -152,7 +184,7 @@ export default function RegisterPage() {
                     value={form.email}
                     onChange={handleChange}
                     disabled={loading}
-                    className="w-full bg-[#F5F7F3] rounded-2xl px-6 py-5 text-lg outline-none border-2 border-transparent focus:border-green-500 transition"
+                   className="w-full bg-[#F5F7F3] rounded-2xl px-4 md:px-6 py-4 md:py-5 text-base md:text-lg outline-none border-2 border-transparent focus:border-green-500 transition"
                     required
                   />
                 </div>
@@ -168,7 +200,7 @@ export default function RegisterPage() {
                       value={form.password}
                       onChange={handleChange}
                       disabled={loading}
-                      className="w-full bg-[#F5F7F3] rounded-2xl px-6 py-5 pr-14 text-lg outline-none border-2 border-transparent focus:border-green-500 transition"
+                      className="w-full bg-[#F5F7F3] rounded-2xl px-4 md:px-6 py-4 md:py-5 pr-14 text-base md:text-lg outline-none border-2 border-transparent focus:border-green-500 transition"
                       required
                     />
                     <button
@@ -194,7 +226,7 @@ export default function RegisterPage() {
                       value={form.confirmPassword}
                       onChange={handleChange}
                       disabled={loading}
-                      className={`w-full bg-[#F5F7F3] rounded-2xl px-6 py-5 pr-14 text-lg outline-none border-2 transition ${
+                      className={`w-full bg-[#F5F7F3] rounded-2xl px-4 md:px-6 py-4 md:py-5 pr-14 text-base md:text-lg outline-none border-2 transition ${
                         form.confirmPassword && form.password !== form.confirmPassword
                           ? "border-red-400"
                           : "border-transparent focus:border-green-500"

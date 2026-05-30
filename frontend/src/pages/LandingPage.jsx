@@ -22,23 +22,23 @@ export default function LandingPage() {
   className="min-h-screen bg-white"
 >
       {/* NAVBAR */}
-      <nav className="flex items-center justify-between px-16 py-6">
+      <nav className="flex items-center justify-between px-4 md:px-16 py-4 md:py-6">
 
         {/* LOGO */}
         <div className="flex items-center gap-3">
           <img
-            src={logo}
-            alt="logo"
-             className="w-12 h-12 object-contain"
-          />
+  src={logo}
+  alt="logo"
+  className="w-10 h-10 md:w-12 md:h-12 object-contain"
+/>
 
-          <h1 className="text-2xl font-bold text-green-700">
-            Tomato LeafGuard
-          </h1>
+          <h1 className="text-sm md:text-2xl font-bold text-green-700">
+  Tomato LeafGuard
+</h1>
         </div>
 
         {/* MENU */}
-<ul className="flex gap-10 text-green-500 font-medium text-lg">
+<ul className="flex gap-3 ml-5 md:gap-10 text-green-500 font-medium text-[10px] md:text-lg">
 
   <li>
     <Link
@@ -70,19 +70,33 @@ export default function LandingPage() {
 </ul>
 
        {/* BUTTON */}
-<div className="flex gap-4">
+<div className="flex gap-2 md:gap-4 mt-4 md:mt-0">
 
-  <Link
-    to="/login"
-    className="border border-green-500 px-6 py-2 rounded-full text-green-500 hover:bg-green-50 transition"
-  >
+ <Link
+  to="/login"
+  className="
+    border border-green-500
+    px-3 py-1
+    md:px-6 md:py-2
+    rounded-full
+    text-[10px] md:text-base
+    text-green-500
+  "
+>
     Login
   </Link>
 
-  <Link
-    to="/register"
-    className="bg-cyan-400 text-white px-6 py-2 rounded-full hover:bg-cyan-500 transition"
-  >
+ <Link
+  to="/register"
+  className="
+    bg-cyan-400
+    text-white
+    px-3 py-1
+    md:px-6 md:py-2
+    rounded-full
+    text-[10px] md:text-base
+  "
+>
     Sign Up
   </Link>
 
@@ -90,36 +104,43 @@ export default function LandingPage() {
       </nav>
 
       {/* HERO SECTION */}
-      <section className="flex flex-col items-center justify-center text-center mt-40 px-4">
-
-        <h1 className="text-7xl font-bold text-green-600">
+      <section className="flex flex-col items-center justify-center text-center mt-0 md:mt-40 px-4">
+       <h1 className="text-5xl md:text-7xl font-bold text-green-600">
           Tomato LeafGuard
         </h1>
 
-        <p className="text-3xl mt-6 max-w-4xl text-gray-800">
+        <p className="text-lg md:text-3xl mt-6 max-w-4xl text-gray-800">
           Diagnosis akurat dalam hitungan detik.
           Hemat biaya pestisida hingga 60%
           dengan targeted treatment.
         </p>
 
-        <Link
-      to="/diagnosis"
-       className="mt-10 bg-green-500 text-white px-10 py-4 rounded-full text-lg hover:bg-green-600 transition inline-block"
-      >
-       Mulai Diagnosis Sekarang →
-      </Link>
+      <Link
+  to="/diagnosis"
+  className="mt-6 mb-16 bg-green-500 text-white px-10 py-4 rounded-full text-lg hover:bg-green-600 transition inline-block"
+>
+  Mulai Diagnosis Sekarang →
+</Link>
 
       </section>
 {/* LAYANAN KAMI */}
 <section
-  className="relative min-h-screen bg-cover bg-center flex flex-col items-center justify-center px-10 py-20"
-  style={{
-    backgroundImage: `linear-gradient(rgba(115, 190, 90, 0.85), rgba(115, 190, 90, 0.85)), url(${tomatoBg})`,
-  }}
+  className="
+    relative
+    min-h-screen
+    bg-[#73BE5A]
+    flex
+    flex-col
+    items-center
+    justify-center
+    px-4
+    md:px-10
+    py-20
+  "
 >
 
   {/* TITLE */}
-  <h1 className="text-7xl font-bold text-white">
+  <h1 className="text-6xl font-bold text-white">
     Layanan Kami
   </h1>
 

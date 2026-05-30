@@ -90,25 +90,25 @@ export default function HistoryPage() {
       <div className="bg-[#EEF5EA] px-8 py-5 flex justify-between items-center">
         <Link to="/profile" className="flex items-center gap-4 cursor-pointer">
           {avatarUrl ? (
-            <img src={avatarUrl} alt="profile" className="w-16 h-16 rounded-full object-cover" />
+            <img src={avatarUrl} alt="profile" className="w-10 h-10 md:w-10 md:h-10  rounded-full object-cover" />
           ) : (
-            <div className="w-16 h-16 rounded-full bg-green-500 flex items-center justify-center text-white text-2xl font-bold">
+            <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-green-500 flex items-center justify-center text-white text-2xl font-bold">
               {user?.full_name?.charAt(0)?.toUpperCase() || "U"}
             </div>
           )}
           <div>
-            <h1 className="text-4xl font-semibold text-gray-800">
+            <h1 className="text-2xl md:text-4xl font-semibold text-gray-800">
               Hallo, {user?.full_name?.split(" ")[0] || "User"} 👋
             </h1>
-            <p className="text-gray-500 text-lg">Semua riwayat tanamanmu ada di sini</p>
+            <p className="text-gray-500 text-sm md:text-lg">Semua riwayat tanamanmu ada di sini</p>
           </div>
         </Link>
 
         <button
           onClick={() => alert("Fitur notifikasi segera hadir!")}
-          className="bg-white p-4 rounded-full shadow-sm cursor-pointer hover:shadow-md transition"
+          className="bg-white p-2 rounded-full shadow-sm cursor-pointer hover:shadow-md transition"
         >
-          <Bell size={28} className="text-gray-700" />
+          <Bell size={20} className="text-gray-700" />
         </button>
       </div>
 

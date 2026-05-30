@@ -23,37 +23,24 @@ export default function App() {
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
 
         {/* Protected Routes — butuh login */}
-        <Route
+       <Route
           path="/diagnosis"
-          element={
-            <ProtectedRoute>
-              <DiagnosisPage />
-            </ProtectedRoute>
-          }
+          element={<DiagnosisPage />}
         />
         <Route
           path="/solution"
           element={
-            <ProtectedRoute>
-              <SolutionPage />
-            </ProtectedRoute>
+           <SolutionPage />
+            
           }
         />
         <Route
           path="/history"
-          element={
-            <ProtectedRoute>
-              <HistoryPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
+          element={<HistoryPage />}
+          />
+       <Route
           path="/profile"
-          element={
-            <ProtectedRoute>
-              <ProfilePage />
-            </ProtectedRoute>
-          }
+          element={<ProfilePage />}
         />
       </Routes>
     </AuthProvider>

@@ -99,40 +99,40 @@ export default function ProfilePage() {
   const avatarUrl = getAvatarUrl();
 
   return (
-    <div className="min-h-screen bg-[#F7F8F4] px-8 py-10">
+    <div className="min-h-screen bg-[#F7F8F4] px-4 md:px-8 py-6 md:py-10">
 
       {/* PROFILE HEADER */}
-      <div className="bg-white rounded-[40px] shadow-sm p-10 flex flex-col items-center relative">
+      <div className="bg-white rounded-[30px] md:rounded-[40px] shadow-sm p-6 md:p-10 flex flex-col items-center relative">
 
         {/* EDIT / SAVE BUTTON */}
         {!isEditing ? (
           <button
             onClick={() => setIsEditing(true)}
-            className="absolute top-8 right-8 bg-green-500 p-4 rounded-full shadow-md hover:bg-green-600 transition"
+           className="absolute top-4 right-4 md:top-8 md:right-8 bg-green-500 p-1.5 md:p-4 rounded-full shadow-md hover:bg-green-600 transition"
           >
-            <Pencil size={24} className="text-white" />
+           <Pencil size={16} className="md:w-6 md:h-6 text-white" />
           </button>
         ) : (
-          <div className="absolute top-8 right-8 flex gap-3">
+          <div className="absolute top-4 right-4 md:top-8 md:right-8 flex gap-2 md:gap-3">
             <button
               onClick={handleSave}
               disabled={saving}
-              className="bg-green-500 p-4 rounded-full shadow-md hover:bg-green-600 transition flex items-center gap-2 px-5"
+              className="bg-green-500 p-2 md:p-4 rounded-full shadow-md hover:bg-green-600 transition"
             >
-              {saving ? <Loader2 size={20} className="animate-spin text-white" /> : <Check size={22} className="text-white" />}
+              {saving ? <Loader2 size={20} className="animate-spin text-white" /> : <Check size={16} className="md:w-6 md:h-6 text-white" />}
             </button>
             <button
               onClick={() => { setIsEditing(false); setSaveError(""); }}
-              className="bg-gray-400 p-4 rounded-full shadow-md hover:bg-gray-500 transition"
+              className="bg-gray-400 p-2 md:p-4 rounded-full shadow-md hover:bg-gray-500 transition"
             >
-              <X size={22} className="text-white" />
+              <X size={16} className="md:w-6 md:h-6 text-white" />
             </button>
           </div>
         )}
 
         {/* PROFILE IMAGE */}
         <div className="relative">
-          <div className="w-[150px] h-[150px] rounded-full border-4 border-green-200 overflow-hidden">
+          <div className="w-[100px] h-[100px] md:w-[150px] md:h-[150px] rounded-full border-4 border-green-200 overflow-hidden">
             {avatarUrl ? (
               <img
                 src={avatarUrl}
@@ -161,9 +161,9 @@ export default function ProfilePage() {
           />
           <button
             onClick={() => fileInputRef.current?.click()}
-            className="absolute bottom-0 right-0 bg-green-500 p-2 rounded-full border-2 border-white hover:bg-green-600 transition"
+            className="absolute bottom-0 right-0 bg-green-500 p-1.5 md:p-2 rounded-full border-2 border-white hover:bg-green-600 transition"
           >
-            <Camera size={16} className="text-white" />
+            <Camera size={12} className="md:w-4 md:h-4 text-white" />
           </button>
         </div>
 
@@ -181,23 +181,23 @@ export default function ProfilePage() {
           </div>
         ) : (
           <>
-            <h1 className="text-5xl font-bold text-[#2E4B3A] mt-6">
+            <h1 className="text-2xl md:text-5xl font-bold text-[#2E4B3A] mt-4 md:mt-6 text-center">
               Hallo, {user?.full_name?.split(" ")[0] || "User"} 🌱
             </h1>
-            <p className="text-green-600 text-2xl mt-2">Petani Tomat</p>
+           <p className="text-green-600 text-base md:text-2xl mt-2">Petani Tomat</p>
           </>
         )}
       </div>
 
       {/* BIODATA CARD */}
-      <div className="bg-[#EEF5EA] rounded-[35px] p-8 mt-10 flex flex-col gap-6">
+      <div className="bg-[#EEF5EA] rounded-[25px] md:rounded-[35px] p-4 md:p-8 mt-6 md:mt-10 flex flex-col gap-4 md:gap-6">
 
         {/* EMAIL */}
         <div className="flex items-center gap-5">
           <div className="bg-white p-4 rounded-full shrink-0">
             <Mail size={28} className="text-green-600" />
           </div>
-          <p className="text-2xl text-gray-700">{user?.email || "-"}</p>
+          <p className="text-sm md:text-2xl text-gray-700 break-all">{user?.email || "-"}</p>
         </div>
 
         {/* PHONE */}
@@ -214,7 +214,7 @@ export default function ProfilePage() {
               className="text-2xl text-gray-700 bg-white rounded-2xl px-4 py-2 outline-none border-2 border-green-300 flex-1"
             />
           ) : (
-            <p className="text-2xl text-gray-700">{user?.phone || "-"}</p>
+            <p className="text-sm md:text-2xl text-gray-700 break-all">{user?.phone || "-"}</p>
           )}
         </div>
 
@@ -232,42 +232,42 @@ export default function ProfilePage() {
               className="text-2xl text-gray-700 bg-white rounded-2xl px-4 py-2 outline-none border-2 border-green-300 flex-1"
             />
           ) : (
-            <p className="text-2xl text-gray-700">{user?.location || "-"}</p>
+            <p className="text-sm md:text-2xl text-gray-700 break-all">{user?.location || "-"}</p>
           )}
         </div>
       </div>
 
       {/* STATISTICS */}
-      <div className="grid grid-cols-3 gap-6 mt-10">
-        <div className="bg-white rounded-3xl p-8 shadow-sm flex flex-col items-center">
+      <div className="grid grid-cols-3 gap-2 md:gap-6 mt-6 md:mt-10">
+        <div className="bg-white rounded-2xl md:rounded-3xl p-3 md:p-8 shadow-sm flex flex-col items-center">
           <ScanLine size={40} className="text-green-600" />
-          <h1 className="text-5xl font-bold text-[#2E4B3A] mt-4">
+          <h1 className="text-2xl md:text-5xl font-bold text-[#2E4B3A] mt-2 md:mt-4">
             {loadingStats ? <Loader2 size={36} className="animate-spin" /> : stats.total_scan}
           </h1>
-          <p className="text-gray-500 text-xl mt-2">Total Scan</p>
+         <p className="text-gray-500 text-xs md:text-xl mt-2 text-center">Total Scan</p>
         </div>
 
-        <div className="bg-white rounded-3xl p-8 shadow-sm flex flex-col items-center">
+        <div className="bg-white rounded-2xl md:rounded-3xl p-3 md:p-8 shadow-sm flex flex-col items-center">
           <Leaf size={40} className="text-green-600" />
-          <h1 className="text-5xl font-bold text-[#2E4B3A] mt-4">
+          <h1 className="text-2xl md:text-5xl font-bold text-[#2E4B3A] mt-2 md:mt-4">
             {loadingStats ? <Loader2 size={36} className="animate-spin" /> : stats.total_diseases}
           </h1>
-          <p className="text-gray-500 text-xl mt-2">Penyakit</p>
+          <p className="text-gray-500 text-xs md:text-xl mt-2 text-center">Penyakit</p>
         </div>
 
-        <div className="bg-white rounded-3xl p-8 shadow-sm flex flex-col items-center">
+        <div className="bg-white rounded-2xl md:rounded-3xl p-3 md:p-8 shadow-sm flex flex-col items-center">
           <Activity size={40} className="text-green-600" />
-          <h1 className="text-5xl font-bold text-[#2E4B3A] mt-4">
+          <h1 className="text-2xl md:text-5xl font-bold text-[#2E4B3A] mt-2 md:mt-4">
             {loadingStats ? <Loader2 size={36} className="animate-spin" /> : `${stats.success_rate}%`}
           </h1>
-          <p className="text-gray-500 text-xl mt-2">Keberhasilan</p>
+         <p className="text-gray-500 text-xs md:text-xl mt-2 text-center">Keberhasilan</p>
         </div>
       </div>
 
       {/* DAILY TIPS */}
-      <div className="bg-[#DFF3D8] rounded-[35px] p-8 mt-10">
-        <h1 className="text-3xl font-bold text-[#2E4B3A]">Tips Hari Ini 🌤️</h1>
-        <p className="text-2xl text-gray-700 leading-relaxed mt-4">
+      <div className="bg-[#DFF3D8] rounded-[25px] md:rounded-[35px] p-5 md:p-8 mt-6 md:mt-10">
+        <h1 className="text-xl md:text-3xl font-bold text-[#2E4B3A]">Tips Hari Ini 🌤️</h1>
+        <p className="text-base md:text-2xl text-gray-700 leading-relaxed mt-3 md:mt-4">
           Hindari menyiram daun tomat pada malam hari untuk mencegah pertumbuhan jamur dan bakteri.
         </p>
       </div>
@@ -275,7 +275,7 @@ export default function ProfilePage() {
       {/* LOGOUT BUTTON */}
       <button
         onClick={handleLogout}
-        className="w-full mt-10 bg-red-50 border-2 border-red-200 text-red-500 hover:bg-red-100 hover:border-red-300 text-2xl font-semibold py-5 rounded-3xl flex items-center justify-center gap-3 transition"
+        className="w-full mt-6 md:mt-10 bg-red-50 border-2 border-red-200 text-red-500 hover:bg-red-100 hover:border-red-300 text-base md:text-2xl font-semibold py-3 md:py-5 rounded-3xl flex items-center justify-center gap-3 transition"
       >
         <LogOut size={28} />
         Keluar dari Akun

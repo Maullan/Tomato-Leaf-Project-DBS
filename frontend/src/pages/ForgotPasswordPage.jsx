@@ -33,36 +33,48 @@ export default function ForgotPasswordPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F7F8F4] flex items-center justify-center px-6 py-10">
+    <div className="w-full max-w-5xl bg-white rounded-[25px] md:rounded-[40px] overflow-hidden shadow-xl grid grid-cols-1 lg:grid-cols-2">
       <div className="w-full max-w-5xl bg-white rounded-[40px] overflow-hidden shadow-xl grid grid-cols-1 lg:grid-cols-2">
 
         {/* LEFT SIDE */}
-        <div className="bg-gradient-to-b from-green-600 to-green-700 p-14 flex flex-col justify-between relative overflow-hidden">
+       <div className="bg-gradient-to-b from-green-600 to-green-700 p-6 md:p-14 flex flex-col justify-between relative overflow-hidden">
           <div>
             <Link
-              to="/login"
-              className="flex items-center gap-3 text-white text-xl mb-10 hover:opacity-80 transition"
-            >
+to="/login"
+  className="
+  flex
+  items-center
+  gap-2
+  md:gap-3
+  text-white
+  text-sm
+  md:text-xl
+  mb-6
+  md:mb-10
+  hover:opacity-80
+  transition
+  "
+>
               <ArrowLeft size={24} />
               Kembali ke Login
             </Link>
 
-            <div className="w-24 h-24 rounded-3xl bg-white/20 flex items-center justify-center text-5xl mb-10">
+            <div className="w-16 h-16 md:w-24 md:h-24 rounded-3xl bg-white/20 flex items-center justify-center text-3xl md:text-5xl mb-6 md:mb-10">
               🔐
             </div>
 
-            <h1 className="text-white text-6xl font-bold leading-tight max-w-xl">
+           <h1 className="text-white text-3xl md:text-6xl font-bold leading-tight max-w-xl">
               Lupa Password?
             </h1>
 
-            <p className="text-green-100 text-2xl mt-8 leading-relaxed max-w-xl">
+            <p className="text-green-100 text-base md:text-2xl mt-4 md:mt-8 leading-relaxed max-w-xl">
               Jangan khawatir. Masukkan email akunmu dan kami akan mengirimkan link untuk reset password.
             </p>
           </div>
 
-          <div className="bg-white/15 backdrop-blur-md rounded-3xl p-8 mt-16">
-            <h3 className="text-white text-3xl font-bold mb-3">Keamanan Akun</h3>
-            <p className="text-green-100 text-lg leading-relaxed">
+          <div className="bg-white/15 backdrop-blur-md rounded-3xl p-4 md:p-8 mt-6 md:mt-16">
+           <h3 className="text-white text-lg md:text-3xl font-bold mb-2 md:mb-3">Keamanan Akun</h3>
+           <p className="text-green-100 text-sm md:text-lg leading-relaxed">
               Pastikan email yang digunakan aktif agar proses pemulihan akun berjalan lancar.
             </p>
           </div>
@@ -72,11 +84,12 @@ export default function ForgotPasswordPage() {
         </div>
 
         {/* RIGHT SIDE */}
-        <div className="p-12 lg:p-16 flex flex-col justify-center">
+        
+      <div className="p-6 md:p-12 lg:p-16 flex flex-col justify-center">
           {success ? (
             <div className="flex flex-col items-center text-center gap-6">
               <CheckCircle2 size={80} className="text-green-500" />
-              <h2 className="text-4xl font-bold text-gray-800">Email Terkirim!</h2>
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-800">Email Terkirim!</h2>
               <p className="text-gray-500 text-xl leading-relaxed">
                 Instruksi reset password telah dikirim ke <strong>{email}</strong>.
                 Periksa inbox atau folder spam kamu.
@@ -122,7 +135,7 @@ export default function ForgotPasswordPage() {
                 {/* EMAIL INPUT */}
                 <div>
                   <label className="text-gray-700 text-lg font-medium block mb-3">Email</label>
-                  <div className="flex items-center bg-[#F5F7F3] rounded-2xl px-6 py-5 border-2 border-transparent focus-within:border-green-500 transition">
+                  <div className="flex items-center bg-[#F5F7F3] rounded-2xl px-4 md:px-6 py-4 md:py-5 border-2 border-transparent focus-within:border-green-500 transition">
                     <Mail size={24} className="text-green-600" />
                     <input
                       type="email"
@@ -140,7 +153,7 @@ export default function ForgotPasswordPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-green-600 hover:bg-green-700 transition text-white text-2xl font-semibold py-5 rounded-2xl mt-10 shadow-lg shadow-green-200 flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full bg-green-600 hover:bg-green-700 transition text-white text-lg md:text-2xl font-semibold py-3 md:py-5 rounded-xl md:rounded-2xl mt-6 md:mt-10 shadow-lg shadow-green-200 flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   {loading ? (
                     <>

@@ -43,62 +43,114 @@ export default function LoginPage() {
   };
 
   return (
-    <div
-      className="min-h-screen bg-cover bg-center flex items-center justify-center relative"
-      style={{ backgroundImage: `url(${tomatoBg})` }}
-    >
+  <div
+  className="h-screen w-full flex items-center justify-center relative overflow-hidden"
+  style={{
+    backgroundImage: `url(${tomatoBg})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  }}
+>
       {/* OVERLAY */}
-      <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px]" />
+      <div className="absolute inset-0 bg-green-900/20 backdrop-blur-[3px]" />
 
       {/* LOGIN BOX */}
       <form
         onSubmit={handleSubmit}
-        className="relative z-10 flex flex-col items-center w-full max-w-md px-6"
-      >
+          className="relative z-10 flex flex-col items-center justify-center w-full max-w-md px-6"
+          >
         {/* TITLE */}
-        <h1 className="text-5xl font-bold text-[#355E3B] tracking-tight mb-16">
+        <h1 className="text-4xl md:text-5xl font-bold text-[#355E3B] tracking-tight mb-8 md:mb-16 text-center">
           Tomato LeafGuard
         </h1>
 
         {/* ERROR MESSAGE */}
         {error && (
-          <div className="w-[400px] mb-4 bg-red-50 border border-red-300 rounded-2xl px-5 py-3">
+         <div
+  className="
+  min-h-screen
+  w-full
+  bg-cover
+  bg-center
+  bg-no-repeat
+  flex
+  items-center
+  justify-center
+  relative
+  "
+  style={{
+    backgroundImage: `url(${tomatoBg})`,
+  }}
+>
             <p className="text-red-600 text-sm font-medium">{error}</p>
           </div>
         )}
 
         {/* EMAIL */}
-        <div className="w-[400px] mb-8">
-          <label className="text-white text-3xl">Masukan E-mail</label>
-          <div className="mt-3 bg-white/20 backdrop-blur-md rounded-full px-6 py-2 flex items-center justify-between border-2 border-transparent focus-within:border-white transition">
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={form.email}
-              onChange={handleChange}
-              disabled={loading}
-              className="bg-transparent outline-none text-white placeholder:text-white/70 text-lg w-full"
-              required
-            />
+        <div className="w-full max-w-[400px] mb-6">
+        <label className="text-white text-xl md:text-3xl">
+  Masukan E-mail
+</label>
+          <div className="
+mt-3
+bg-white/20
+backdrop-blur-md
+rounded-full
+px-5
+py-3
+md:px-6
+md:py-2
+flex
+items-center
+justify-between
+">
+           <input
+  type="email"
+  name="email"
+  placeholder="Email"
+  value={form.email}
+  onChange={handleChange}
+  disabled={loading}
+  className="bg-transparent outline-none text-white placeholder:text-white/70 text-base md:text-lg w-full"
+  required
+/>
             <Mail size={35} className="text-white" />
           </div>
         </div>
 
         {/* PASSWORD */}
-        <div className="w-[400px] mb-6">
-          <label className="text-white text-3xl">Masukan Password</label>
-          <div className="mt-3 bg-white/20 backdrop-blur-md rounded-full px-6 py-2 flex items-center justify-between border-2 border-transparent focus-within:border-white transition">
+        <div className="w-full max-w-[400px] mb-6">
+          <label className="text-white text-xl md:text-3xl">
+  Masukan Password
+</label>
+          <div className="
+mt-3
+bg-white/20
+backdrop-blur-md
+rounded-full
+px-5
+py-3
+md:px-6
+md:py-2
+flex
+items-center
+justify-between
+border-2
+border-transparent
+focus-within:border-white
+transition
+">
             <input
-              type={showPassword ? "text" : "password"}
-              name="password"
-              placeholder="Password"
-              value={form.password}
-              onChange={handleChange}
-              disabled={loading}
-              className="bg-transparent outline-none text-white placeholder:text-white/70 text-lg w-full"
-              required
-            />
+  type={showPassword ? "text" : "password"}
+  name="password"
+  placeholder="Password"
+  value={form.password}
+  onChange={handleChange}
+  disabled={loading}
+  className="bg-transparent outline-none text-white placeholder:text-white/70 text-base md:text-lg w-full"
+  required
+/>
             <button
               type="button"
               onClick={() => setShowPassword((v) => !v)}
@@ -111,11 +163,11 @@ export default function LoginPage() {
 
         {/* LINKS */}
         <div className="flex flex-col items-center mb-10">
-          <p className="text-white text-2xl">
+          <p className="text-white text-base md:text-2xl text-center">
             Belum punya akun?
             <Link
               to="/register"
-              className="text-2xl font-bold text-green-900 ml-2 hover:underline"
+              className="text-base md:text-2xl font-bold text-green-900 ml-2 hover:underline"
             >
               Daftar
             </Link>
@@ -132,8 +184,30 @@ export default function LoginPage() {
         <button
           type="submit"
           disabled={loading}
-          className="w-[260px] py-3 rounded-full text-xl font-semibold bg-green-600 hover:bg-green-700 hover:scale-105 transition text-white shadow-xl shadow-green-900/30 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
-        >
+          className="
+w-full
+max-w-[260px]
+py-3
+rounded-full
+text-lg
+md:text-xl
+font-semibold
+bg-green-600
+hover:bg-green-700
+hover:scale-105
+transition
+text-white
+shadow-xl
+shadow-green-900/30
+flex
+items-center
+justify-center
+gap-2
+disabled:opacity-70
+disabled:cursor-not-allowed
+disabled:hover:scale-100
+"
+>
           {loading ? (
             <>
               <Loader2 size={22} className="animate-spin" />
